@@ -6,9 +6,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Counter />
+        <img src="house.png" alt="" />
         <p>Register</p>
-        <Counter />
+
         <p>Login</p>
       </header>
     </div>

@@ -21,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "preview": "react-scripts preview",
     "test": "react-scripts test --coverage",
     "test:prod": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
