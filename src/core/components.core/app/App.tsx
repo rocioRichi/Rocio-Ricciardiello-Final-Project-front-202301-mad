@@ -1,31 +1,13 @@
 import "./App.css";
 
+import Register from "../../../features/components.features/register.form/register.form";
+import Login from "../../../features/components.features/login/login";
 function App() {
   return (
-    <>
-      <img src="../../../pageslogo.png" alt="logo" />
-
-      <div className="form">
-        <form>
-          <label>
-            <p>
-              <input type="text" name="email" /> Email
-            </p>
-          </label>
-          <div className="wrapper">
-            <input type="password" required /> Password
-            <span className="mostrar-btn">
-              <i className="fas fa-eye"></i>
-            </span>
-          </div>
-          <p className="sendbotton">
-            {" "}
-            <input className="enviar" type="submit" value="Iniciar sesión" />
-          </p>
-        </form>
-      </div>
-      <div className="registrarsetextcontainer">Registrarse</div>
-    </>
+    <div className="App">
+      <Register />
+      <Login></Login>
+    </div>
   );
 }
 

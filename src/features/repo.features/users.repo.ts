@@ -1,21 +1,27 @@
-import { ServerResponse, UserStructure } from "../../models/user";
-import { RepoUser } from "./user.repo.interface";
+import {
+  LoginStructure,
+  RegisterStructure,
+  ServerResponse,
+} from "../../models/users";
+import { RepoUser } from "./users.repo.interface";
 
 export class UsersRepo implements RepoUser<ServerResponse> {
   url: string;
   constructor() {
-    this.url = "http://localhost:4500/users";
+    this.url = "https://back-rocio-reformas.onrender.com/users";
   }
 
   async create(
-    userInfo: Partial<UserStructure>,
+    newUser: Partial<RegisterStructure>,
     urlExtraPath: string
   ): Promise<ServerResponse> {
     const url = this.url + "/" + urlExtraPath;
+    console.log(url);
+    console.log(newUser);
 
     const resp = await fetch(url, {
       method: "POST",
-      body: JSON.stringify(userInfo),
+      body: JSON.stringify(newUser),
       headers: {
         "Content-type": "application/json",
       },
@@ -24,12 +30,13 @@ export class UsersRepo implements RepoUser<ServerResponse> {
       throw new Error(`Error http: ${resp.status} ${resp.statusText}`);
 
     const data = await resp.json();
+    console.log(data);
 
     return data;
   }
 
   async update(
-    userInfo: Partial<UserStructure>,
+    userInfo: Partial<LoginStructure>,
     urlExtraPath: string,
     token: string
   ): Promise<ServerResponse> {
@@ -46,6 +53,30 @@ export class UsersRepo implements RepoUser<ServerResponse> {
       throw new Error(`Error http: ${resp.status} ${resp.statusText}`);
 
     const data = await resp.json();
+
+    return data;
+  }
+
+  async login(
+    loginInfo: LoginStructure,
+    urlExtraPath: string
+  ): Promise<ServerResponse> {
+    const url = this.url + "/" + urlExtraPath;
+    console.log(url);
+    console.log(loginInfo);
+
+    const resp = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(loginInfo),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    if (!resp.ok)
+      throw new Error(`Error http: ${resp.status} ${resp.statusText}`);
+
+    const data = await resp.json();
+    console.log(data);
 
     return data;
   }

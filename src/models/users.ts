@@ -8,3 +8,16 @@ export interface LoginStructure {
   email: string;
   passwd: string;
 }
+export type ServerResponse = {
+  results: [];
+};
+// export class User implements RegisterStructure {
+//   constructor(
+//     public id: string,
+//     public email: string,
+//     public passwd: string,
+//     public firstName: string,
+//     public lastName: string,
+//     public telephone: string
+//   ) {}
+// }

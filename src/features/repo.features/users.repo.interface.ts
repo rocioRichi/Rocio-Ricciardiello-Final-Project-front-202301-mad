@@ -1,9 +1,9 @@
-import { UserStructure } from "../../models/user";
+import { LoginStructure } from "../../models/users";
 
 export interface RepoUser<T> {
-  create(userInfo: Partial<UserStructure>, urlPath: string): Promise<T>;
+  create(userInfo: Partial<LoginStructure>, urlPath: string): Promise<T>;
   update(
-    userInfo: Partial<UserStructure>,
+    userInfo: Partial<LoginStructure>,
     urlPath: string,
     token: string
   ): Promise<T>;
