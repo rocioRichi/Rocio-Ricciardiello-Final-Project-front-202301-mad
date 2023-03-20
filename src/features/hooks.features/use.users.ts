@@ -3,9 +3,11 @@ import { LoginStructure, RegisterStructure } from "../../models/users";
 import { UsersRepo } from "../repo.features/users.repo";
 // import { login, register } from "../reducers.features/users.slice";
 import { AppDispatch, RootState } from "../../store/store";
+import { loginToken } from "../reducers.features/users.slice";
 
 export function useUsers(repo: UsersRepo) {
   const users = useSelector((state: RootState) => state.users);
+
   const dispatch = useDispatch<AppDispatch>();
 
   const userRegister = async (newUser: Partial<RegisterStructure>) => {
@@ -17,7 +19,8 @@ export function useUsers(repo: UsersRepo) {
   };
   const userLogin = async (loginInfo: LoginStructure) => {
     try {
-      await repo.login(loginInfo, "login");
+      const tokensResponse: any = await repo.login(loginInfo, "login");
+      dispatch(loginToken(tokensResponse.results[0]));
     } catch (error) {
       console.error((error as Error).message);
     }

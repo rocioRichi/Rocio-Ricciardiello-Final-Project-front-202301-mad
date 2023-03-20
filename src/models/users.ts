@@ -11,6 +11,10 @@ export interface LoginStructure {
 export type ServerResponse = {
   results: [];
 };
+export type TokenResponse = {
+  token: string;
+};
+
 // export class User implements RegisterStructure {
 //   constructor(
 //     public id: string,

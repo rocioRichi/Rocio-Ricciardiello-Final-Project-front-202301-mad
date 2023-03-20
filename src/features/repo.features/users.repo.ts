@@ -2,6 +2,7 @@ import {
   LoginStructure,
   RegisterStructure,
   ServerResponse,
+  TokenResponse,
 } from "../../models/users";
 import { RepoUser } from "./users.repo.interface";
 
@@ -60,7 +61,7 @@ export class UsersRepo implements RepoUser<ServerResponse> {
   async login(
     loginInfo: LoginStructure,
     urlExtraPath: string
-  ): Promise<ServerResponse> {
+  ): Promise<TokenResponse> {
     const url = this.url + "/" + urlExtraPath;
     console.log(url);
     console.log(loginInfo);
