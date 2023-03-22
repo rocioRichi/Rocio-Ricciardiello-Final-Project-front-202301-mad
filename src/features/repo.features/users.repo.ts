@@ -1,3 +1,4 @@
+import { currentUrl } from "../../config.renderorlocal";
 import {
   LoginStructure,
   RegisterStructure,
@@ -5,13 +6,11 @@ import {
   TokenResponse,
 } from "../../models/users";
 import { RepoUser } from "./users.repo.interface";
-
 export class UsersRepo implements RepoUser<ServerResponse> {
   url: string;
   constructor() {
-    this.url = "https://back-rocio-reformas.onrender.com/users";
+    this.url = currentUrl;
   }
-
   async create(
     newUser: Partial<RegisterStructure>,
     urlExtraPath: string
@@ -77,6 +76,35 @@ export class UsersRepo implements RepoUser<ServerResponse> {
       throw new Error(`Error http: ${resp.status} ${resp.statusText}`);
 
     const data = await resp.json();
+    console.log("token devuelto por el repo");
+    console.log(data);
+
+    return data;
+  }
+
+  async getById(
+    loginInfo: RegisterStructure,
+    urlExtraPath: string,
+    token: string,
+    id: string
+  ): Promise<RegisterStructure[]> {
+    const url = this.url + "/" + urlExtraPath + "/" + id;
+    console.log(url);
+    console.log(token);
+    console.log(id);
+
+    const resp = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify(loginInfo),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    if (!resp.ok)
+      throw new Error(`Error http: ${resp.status} ${resp.statusText}`);
+
+    const data = await resp.json();
+    console.log("token devuelto por el repo");
     console.log(data);
 
     return data;

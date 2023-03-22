@@ -51,7 +51,7 @@ export default function Register() {
       </label>
       <input type="password" required /> Password
       <p className="sendbotton">
-        <input className="enviar" type="submit" value="Iniciar sesión" />
+        <input className="enviar" type="submit" value="Registrarse" />
       </p>
     </form>
   );

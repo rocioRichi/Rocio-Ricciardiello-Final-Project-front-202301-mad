@@ -23,11 +23,12 @@ body {
 }
 .enviar {
   border-radius: 6px;
-  width: 100%;
+  width: 2em;
   border: none;
   display: inline-block;
   font-family: "Handlee", cursive;
   font-size: large;
+  box-shadow: 0;
 }
 input {
   padding: 1.5em;
@@ -35,6 +36,7 @@ input {
   border: 0;
   width: 20em;
   outline-color: rgb(233, 241, 241);
+  box-shadow: 1px 2px 3px 3px rgba(226, 216, 216, 0.154);
 }
 
 .registrarsetextcontainer {
