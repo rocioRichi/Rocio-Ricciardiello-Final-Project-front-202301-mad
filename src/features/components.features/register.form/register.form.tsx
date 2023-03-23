@@ -1,7 +1,7 @@
 import { SyntheticEvent, useMemo } from "react";
 import { RegisterStructure } from "../../../models/users";
 import { useUsers } from "../../hooks.features/use.users";
-import { UsersRepo } from "../../repo.features/users.repo";
+import { UsersRepo } from "../../repo.features/users.repo/users.repo";
 import "./register.form.css";
 
 export default function Register() {
@@ -29,7 +29,7 @@ export default function Register() {
     <form onSubmit={handleSubmit} className="formregister">
       <label>
         <p>
-          <input type="text" name="email" /> Email
+          <input type="text" name="ls_name" /> Email
         </p>
       </label>
       <label>

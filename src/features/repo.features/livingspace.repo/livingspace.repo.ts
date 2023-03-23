@@ -1,27 +1,25 @@
-import { currentUrl } from "../../config.renderorlocal";
-import {
-  LoginStructure,
-  RegisterStructure,
-  ServerResponse,
-  TokenResponse,
-} from "../../models/users";
-import { RepoUser } from "./users.repo.interface";
-export class UsersRepo implements RepoUser<ServerResponse> {
+import debug from "debug";
+import { currentUrl } from "../../../config.renderorlocal";
+import { LivingSpaceStructure } from "../../../models/livingspace";
+import { ServerResponse } from "../../../models/users";
+import { RepoLivingSpace } from "./livingspace.repo.interface";
+
+export class LivingSpaceRepo implements RepoLivingSpace<ServerResponse> {
   url: string;
   constructor() {
     this.url = currentUrl;
   }
   async create(
-    newUser: Partial<RegisterStructure>,
+    newLivingSpace: Partial<LivingSpaceStructure>,
     urlExtraPath: string
   ): Promise<ServerResponse> {
     const url = this.url + "/" + urlExtraPath;
     console.log(url);
-    console.log(newUser);
+    console.log(newLivingSpace);
 
     const resp = await fetch(url, {
       method: "POST",
-      body: JSON.stringify(newUser),
+      body: JSON.stringify(newLivingSpace),
       headers: {
         "Content-type": "application/json",
       },
@@ -36,7 +34,7 @@ export class UsersRepo implements RepoUser<ServerResponse> {
   }
 
   async update(
-    userInfo: Partial<LoginStructure>,
+    userInfo: Partial<LivingSpaceStructure>,
     urlExtraPath: string,
     token: string
   ): Promise<ServerResponse> {
@@ -57,17 +55,11 @@ export class UsersRepo implements RepoUser<ServerResponse> {
     return data;
   }
 
-  async login(
-    loginInfo: LoginStructure,
-    urlExtraPath: string
-  ): Promise<TokenResponse> {
+  async getAll(urlExtraPath: string): Promise<LivingSpaceStructure[]> {
     const url = this.url + "/" + urlExtraPath;
-    console.log(url);
-    console.log(loginInfo);
 
     const resp = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(loginInfo),
+      method: "GET",
       headers: {
         "Content-type": "application/json",
       },
@@ -83,14 +75,13 @@ export class UsersRepo implements RepoUser<ServerResponse> {
   }
 
   async getById(
-    loginInfo: RegisterStructure,
+    loginInfo: LivingSpaceStructure,
     urlExtraPath: string,
     token: string,
     id: string
-  ): Promise<RegisterStructure[]> {
+  ): Promise<LivingSpaceStructure[]> {
     const url = this.url + "/" + urlExtraPath + "/" + id;
     console.log(url);
-    console.log(token);
     console.log(id);
 
     const resp = await fetch(url, {

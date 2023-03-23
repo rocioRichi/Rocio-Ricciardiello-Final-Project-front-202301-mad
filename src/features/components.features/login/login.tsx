@@ -1,7 +1,7 @@
 import { SyntheticEvent, useMemo } from "react";
 import { LoginStructure } from "../../../models/users";
 import { useUsers } from "../../hooks.features/use.users";
-import { UsersRepo } from "../../repo.features/users.repo";
+import { UsersRepo } from "../../repo.features/users.repo/users.repo";
 import "./login.css";
 
 export default function Login() {

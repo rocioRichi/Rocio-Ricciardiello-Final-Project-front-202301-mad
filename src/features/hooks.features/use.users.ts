@@ -1,6 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { LoginStructure, RegisterStructure } from "../../models/users";
-import { UsersRepo } from "../repo.features/users.repo";
+import {
+  LoginStructure,
+  RegisterStructure,
+  TokenResponse,
+} from "../../models/users";
+import { UsersRepo } from "../repo.features/users.repo/users.repo";
 // import { login, register } from "../reducers.features/users.slice";
 import { AppDispatch, RootState } from "../../store/store";
 import { loginToken, loginUser } from "../reducers.features/users.slice";

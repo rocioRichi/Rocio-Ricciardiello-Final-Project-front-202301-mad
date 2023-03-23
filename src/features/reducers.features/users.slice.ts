@@ -16,16 +16,6 @@ const initialState: StateStructure = {
   token: "No token",
 };
 
-// export const userSlice = createSlice({
-//   name: "user",
-//   initialState,
-//   reducers: {
-// login(state, action: PayloadAction<LoginStructure>) {
-//   debugger;
-//   state.userLogged = action.payload;
-// },
-//   },
-// });
 export const userSlice = createSlice({
   name: "users",
   initialState,
