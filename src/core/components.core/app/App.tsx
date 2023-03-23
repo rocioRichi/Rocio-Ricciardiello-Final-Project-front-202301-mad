@@ -1,17 +1,18 @@
 import "./App.css";
-
+import { Header } from "../header/header";
 import Register from "../../../features/components.features/register.form/register.form";
 import Login from "../../../features/components.features/login/login";
-import LivingSpace from "../../../features/components.features/login/login";
+import { Footer } from "../footer/footer";
+import { Gallery } from "../../../features/components.features/gallery/gallery";
 
-import { Header } from "../header/header";
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <Register />
       <Login></Login>
-      <LivingSpace></LivingSpace>
+      <Gallery></Gallery>
+      <Footer></Footer>
     </div>
   );
 }

@@ -55,7 +55,7 @@ export class LivingSpaceRepo implements RepoLivingSpace<ServerResponse> {
     return data;
   }
 
-  async getAll(urlExtraPath: string): Promise<LivingSpaceStructure[]> {
+  async getAll(urlExtraPath: string): Promise<ServerResponse> {
     const url = this.url + "/" + urlExtraPath;
 
     const resp = await fetch(url, {
@@ -68,7 +68,6 @@ export class LivingSpaceRepo implements RepoLivingSpace<ServerResponse> {
       throw new Error(`Error http: ${resp.status} ${resp.statusText}`);
 
     const data = await resp.json();
-    console.log("token devuelto por el repo");
     console.log(data);
 
     return data;
