@@ -26,28 +26,22 @@ export default function Register() {
     formData.reset();
   };
   return (
-    <form onSubmit={handleSubmit} className="formregister">
-      <label>
-        <p>
-          <input type="text" name="ls_name" /> Email
-        </p>
-      </label>
-      <label>
-        <p>
-          <input type="text" name="firstname" /> Nombre
-        </p>
-      </label>
-      <label>
-        <p>
-          <input type="text" name="lastname" /> Apellidos
-        </p>
-      </label>
-      <label>
-        <p>
-          <input type="text" name="telephone" /> Teléfono
-        </p>
-      </label>
-      <input type="password" required /> Password
+    <form onSubmit={handleSubmit} className="form">
+      <p>
+        <input type="text" required name="email" /> Email
+      </p>
+      <p>
+        <input type="password" required /> Password
+      </p>
+      <p>
+        <input type="text" required name="email" /> Nombre
+      </p>
+      <p>
+        <input type="text" required name="email" /> Apellido
+      </p>
+      <p>
+        <input type="text" required name="email" /> Teléfono
+      </p>
       <p className="sendbotton">
         <input className="enviar" type="submit" value="Registrarse" />
       </p>

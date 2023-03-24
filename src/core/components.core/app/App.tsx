@@ -1,17 +1,15 @@
 import "./App.css";
 import { Header } from "../header/header";
-import Register from "../../../features/components.features/register.form/register.form";
-import Login from "../../../features/components.features/login/login";
+import AppRouter from "../approuter/approuter";
 import { Footer } from "../footer/footer";
-import { Gallery } from "../../../features/components.features/gallery/gallery";
 
 function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Register />
-      <Login></Login>
-      <Gallery></Gallery>
+      <main>
+        <AppRouter></AppRouter>
+      </main>
       <Footer></Footer>
     </div>
   );

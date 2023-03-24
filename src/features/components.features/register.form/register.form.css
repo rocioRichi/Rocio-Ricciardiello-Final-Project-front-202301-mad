@@ -13,22 +13,21 @@ body {
 
 .form {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #f8f2f280;
   border-radius: 15px;
-  height: 20em;
-  width: 30em;
+  height: 25em;
+  width: 35em;
   font-size: large;
   font-family: "Handlee", cursive;
 }
 .enviar {
   border-radius: 6px;
-  width: 2em;
+  width: 100%;
   border: none;
   display: inline-block;
   font-family: "Handlee", cursive;
   font-size: large;
-  box-shadow: 0;
 }
 input {
   padding: 1.5em;
@@ -36,7 +35,6 @@ input {
   border: 0;
   width: 20em;
   outline-color: rgb(233, 241, 241);
-  box-shadow: 1px 2px 3px 3px rgba(226, 216, 216, 0.154);
 }
 
 .registrarsetextcontainer {
@@ -44,4 +42,7 @@ input {
   font-family: "Handlee", cursive;
   justify-content: flex-end;
   padding-top: 1em;
+}
+.linktoregister {
+  text-decoration: none;
 }

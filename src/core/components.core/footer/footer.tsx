@@ -3,7 +3,7 @@ import "./footer.css";
 export function Footer() {
   return (
     <>
-      <p>Footer</p>
+      <p className="footer">~ Gestión de obras ~</p>
     </>
   );
 }

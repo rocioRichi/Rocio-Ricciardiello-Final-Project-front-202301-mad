@@ -4,7 +4,9 @@ import { loadGallery } from "../reducers.features/livingspace.slice";
 import { LivingSpaceRepo } from "../repo.features/livingspace.repo/livingspace.repo";
 
 export function useLivingSpace(repo: LivingSpaceRepo) {
-  const galleryState = useSelector((state: RootState) => state.livingSpace);
+  const galleryState = useSelector(
+    (state: RootState) => state.livingSpaceState
+  );
 
   const dispatch = useDispatch<AppDispatch>();
 

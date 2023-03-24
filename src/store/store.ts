@@ -5,7 +5,7 @@ import { livingSpaceReducer } from "../features/reducers.features/livingspace.sl
 export const store = configureStore({
   reducer: {
     users: userReducer,
-    livingSpace: livingSpaceReducer,
+    livingSpaceState: livingSpaceReducer,
   },
 });
 

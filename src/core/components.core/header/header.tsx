@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { RootState } from "../../../store/store";
 import "./header.css";
 export function Header() {
@@ -9,8 +10,11 @@ export function Header() {
   return (
     <>
       <header className="header">
-        <img src="../../../pageslogo.png" alt="logo" />
-        <p>{initials}</p>
+        <Link to={"/login"} className="linktoregister">
+          <img src="../../../pageslogo.png" alt="logo" />
+        </Link>
+
+        <p className="saludo">{initials}</p>
       </header>
     </>
   );

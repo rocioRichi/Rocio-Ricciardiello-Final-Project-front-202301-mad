@@ -1,4 +1,5 @@
 import { SyntheticEvent, useMemo } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginStructure } from "../../../models/users";
 import { useUsers } from "../../hooks.features/use.users";
 import { UsersRepo } from "../../repo.features/users.repo/users.repo";
@@ -7,7 +8,7 @@ import "./login.css";
 export default function Login() {
   const repo = useMemo(() => new UsersRepo(), []);
   const { userLogin } = useUsers(repo);
-
+  const navigate = useNavigate();
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
     const formData = event.currentTarget as HTMLFormElement;
@@ -21,28 +22,29 @@ export default function Login() {
     userLogin(loginInfo);
 
     formData.reset();
+    navigate("/livingspace");
   };
 
   return (
     <>
-      <img src="../../../pageslogo.png" alt="logo" />
+      <form onSubmit={handleSubmit} className="form">
+        <p>
+          <input type="text" name="email" /> Email
+        </p>
 
-      <div className="form">
-        <form onSubmit={handleSubmit}>
-          <label>
-            <p>
-              <input type="text" name="email" /> Email
-            </p>
-          </label>
-          <div className="wrapper">
-            <input type="password" required /> Password
-          </div>
-          <p className="sendbotton">
-            <input className="enviar" type="submit" value="Iniciar sesión" />
-          </p>
-        </form>
+        <p className="wrapper">
+          <input type="password" required /> Password
+        </p>
+        <p className="sendbotton">
+          <input className="enviar" type="submit" value="Iniciar sesión" />
+        </p>
+      </form>
+
+      <div className="registrarsetextcontainer">
+        <Link to={"/register"} className="linktoregister">
+          Registrarse
+        </Link>
       </div>
-      <div className="registrarsetextcontainer">Registrarse</div>
     </>
   );
 }
