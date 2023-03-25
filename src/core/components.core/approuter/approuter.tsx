@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom";
+import CreateLivingSpace from "../../../features/components.features/create.livingspace/create.livingspace";
 import { Gallery } from "../../../features/components.features/gallery/gallery";
 import Login from "../../../features/components.features/login/login";
 import Register from "../../../features/components.features/register.form/register.form";
-// import { Room } from "../../../features/components.features/room/room";
+import { Room } from "../../../features/components.features/room/room";
+import { Table } from "../../../features/components.features/table/table";
 
 export function AppRouter() {
   return (
@@ -11,6 +13,13 @@ export function AppRouter() {
       <Route path="/login" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
       <Route path="/livingspace" element={<Gallery />}></Route>
+      <Route path="/livingspace/room" element={<Room></Room>}></Route>
+      <Route path="livingspace/table" element={<Table />}></Route>
+      <Route
+        path="/livingspace/newlivingspace"
+        element={<CreateLivingSpace />}
+      ></Route>
+
       {/* <Route path="/room" element={<Room />}></Route> */}
     </Routes>
   );

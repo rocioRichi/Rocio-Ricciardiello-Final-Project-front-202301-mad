@@ -1,0 +1,30 @@
+.roomtable__td__roomelement {
+  font-size: x-large;
+  font-weight: 600;
+}
+.roomtable__td__property {
+  width: 10em;
+}
+.room__drawinganddatecontainer {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+room__drawingandloadimagecontainer {
+  display: flex;
+}
+.room__aploadimageform {
+  display: flex;
+  flex-direction: column;
+}
+.room__aploadimageform {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 15px;
+  height: 15em;
+  width: 20em;
+  font-size: large;
+  padding-top: 1em;
+}

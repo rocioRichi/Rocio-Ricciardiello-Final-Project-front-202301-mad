@@ -1,17 +1,17 @@
 export interface LivingSpaceStructure {
-  m2: number;
   livingspace: string;
-  window?: productDetail;
-  floor?: productDetail;
-  wardrobe?: productDetail;
-  walls?: productDetail;
-  door?: doorDetail;
+  m2: number;
+  window?: ProductDetail;
+  floor?: ProductDetail;
+  wardrobe?: ProductDetail;
+  walls?: ProductDetail;
+  door?: DoorDetail;
 }
-export type productDetail = {
+export type ProductDetail = {
   m2: string;
   ref: string;
 };
-export type doorDetail = {
+export type DoorDetail = {
   hand: "right | left";
   ref: string;
 };

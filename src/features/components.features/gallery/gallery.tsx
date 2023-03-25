@@ -1,5 +1,6 @@
 import { SyntheticEvent, useMemo } from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { LivingSpaceStructure } from "../../../models/livingspace";
 import { RootState } from "../../../store/store";
 import { useLivingSpace } from "../../hooks.features/use.livingspace";
@@ -16,6 +17,7 @@ export function Gallery() {
   const galleryArray = useSelector(
     (state: RootState) => state.livingSpaceState.galleryState
   );
+
   return (
     <>
       <button onClick={handleSubmit}>Get Gallery</button>

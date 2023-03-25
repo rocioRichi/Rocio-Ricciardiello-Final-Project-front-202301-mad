@@ -1,36 +1,125 @@
-export {};
-// import "./room.css";
-// import { Link } from "react-router-dom";
-// import { LivingSpaceStructure } from "../../../models/livingspace";
-// type RoomProps = {
-//   product: Partial<LivingSpaceStructure>;
-// };
+import "./room.css";
+export function Room() {
+  return (
+    <div className="room__drawinganddatecontainer">
+      <div className="room__drawingandloadimagecontainer">
+        <img
+          src="../../../planos/kitchenview.jpg"
+          alt="Plano dibujo de una cocina"
+        />
+        <form className="room__aploadimageform">
+          <label>
+            Picture
+            <input type="file" name="picture" />
+          </label>
 
-// export function Room({ livingspace }: RoomProps) {
-//   return (
-//     <>
-//     <ul>
-//     <li className="livingspace" key={livingspace.id}>
-//       <Link to={/detail/${livingspace.id}}{">"}
-//         <img
-//           className="productcardimage"
-//           src={product.image}
-//           alt={${product.shortDescription} card}
-//         ></img>
-//         <div className="productcardshortDescription">
-//           {product.shortDescription}
-//         </div>
-//       </Link>
-//       <div className="productcard__details">
-//         <div>m2: {livinspace.m2}</div>
-//         <div>livingspace: {livingspace.livingspace}</div>
-//         <div>window: {livingspace.ean}</div>
-//         <div>Cost (€): {product.costPerUnit}</div>
-//         <div>Price (€): {product.pricePerUnit}</div>
-//         <div>Creator: {product.userCreatorEmail}</div>
-//       </div>
-//     </li>
-//     </ul>
-//     </>
-//   );
-// }
+          <button className="room__buttonform" type="submit">
+            Subir
+          </button>
+        </form>
+      </div>
+      <div className="room__datacontainer">
+        {/* Estacia y metros cuadrados */}
+        <table border={0}>
+          <tr className="roomtable__tr">
+            <td className="roomtable__td__roomelement" colSpan={2}>
+              Cocina
+            </td>
+          </tr>
+          <tr>
+            <td className="roomtable__td__property"> m2:</td>
+            <td className="table__td__data"> 14</td>
+          </tr>
+        </table>
+
+        {/* Suelo */}
+
+        <table border={0}>
+          <tr className="table__tr">
+            <td className="roomtable__td__roomelement" colSpan={2}>
+              Suelo
+            </td>
+          </tr>
+          <tr>
+            <td className="roomtable__td__property"> m2:</td>
+            <td className="table__td__data"> 16</td>
+          </tr>
+          <tr className="roomtd">
+            <td className="roomtable__td__property">Material:</td>
+            <td className="table__td__data">Porcelánico</td>
+          </tr>
+        </table>
+
+        {/* Armario */}
+
+        <table border={0}>
+          <tr className="table__tr">
+            <td className="roomtable__td__roomelement" colSpan={2}>
+              Armario
+            </td>
+          </tr>
+          <tr>
+            <td className="roomtable__td__property"> m. lineales:</td>
+            <td className="table__td__data"> 2</td>
+          </tr>
+          <tr className="roomtd">
+            <td className="roomtable__td__propertyy">Modelo de puerta:</td>
+            <td className="table__td__data">4V</td>
+          </tr>
+        </table>
+
+        {/* Pintura */}
+
+        <table border={0}>
+          <tr className="table__tr">
+            <td className="roomtable__td__roomelement" colSpan={2}>
+              Pintura
+            </td>
+          </tr>
+          <tr>
+            <td className="roomtable__td__property"> m2:</td>
+            <td className="table__td__data">38</td>
+          </tr>
+          <tr className="roomtd">
+            <td className="roomtable__td__property">Color:</td>
+            <td className="table__td__data">Ral 1001</td>
+          </tr>
+        </table>
+
+        {/* Puerta */}
+
+        <table border={0}>
+          <tr className="table__tr">
+            <td className="roomtable__td__roomelement" colSpan={2}>
+              Puerta
+            </td>
+          </tr>
+          <tr>
+            <td className="roomtable__td__property"> Mano</td>
+            <td className="table__td__data">Derecha</td>
+          </tr>
+          <tr className="roomtd">
+            <td className="roomtable__td__property">Modelo:</td>
+            <td className="table__td__data">4V</td>
+          </tr>
+        </table>
+        {/* window */}
+        <table border={0}>
+          <tr className="table__tr">
+            <td className="roomtable__td__roomelement" colSpan={2}>
+              Ventana
+            </td>
+          </tr>
+          <tr>
+            <td className="roomtable__td__property"> m2</td>
+            <td className="table__td__data">1,8</td>
+          </tr>
+          <tr className="roomtd">
+            <td className="roomtable__td__property">Material:</td>
+            <td className="table__td__data">Pvc</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  );
+}
