@@ -1,48 +1,31 @@
 html,
 body {
   font-family: "Handlee", cursive;
-  display: flex;
-  position: relative;
   min-height: 100vh;
-  justify-content: center;
-  background-color: #fbfdfe55;
   display: flex;
-  justify-content: first baseline;
+  justify-content: center;
   padding-top: 1em;
 }
-
-.form {
+a:visited {
+  color: green;
+}
+.registerform {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
-  background-color: #f8f2f280;
+  background-color: #b8b6b60e;
   border-radius: 15px;
-  height: 25em;
+  height: 30em;
   width: 35em;
   font-size: large;
-  font-family: "Handlee", cursive;
-}
-.enviar {
-  border-radius: 6px;
-  width: 100%;
-  border: none;
-  display: inline-block;
-  font-family: "Handlee", cursive;
-  font-size: large;
-}
-input {
-  padding: 1.5em;
-  border-radius: 1em;
-  border: 0;
-  width: 20em;
-  outline-color: rgb(233, 241, 241);
-}
-
-.registrarsetextcontainer {
-  display: flex;
-  font-family: "Handlee", cursive;
-  justify-content: flex-end;
   padding-top: 1em;
+}
+.registerlabel {
+  padding: 0.7em;
 }
 .linktoregister {
   text-decoration: none;
+}
+.registerform-input {
+  width: 25em;
 }

@@ -3,7 +3,9 @@ import "./footer.css";
 export function Footer() {
   return (
     <>
-      <p className="footer">~ Gestión de obras ~</p>
+      <div className="footertext">
+        <p>~ Gestión de obras ~</p>
+      </div>
     </>
   );
 }

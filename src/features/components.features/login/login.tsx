@@ -27,19 +27,24 @@ export default function Login() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="form">
-        <p>
-          <input type="text" name="email" /> Email
-        </p>
-
-        <p className="wrapper">
-          <input type="password" required /> Password
-        </p>
-        <p className="sendbotton">
-          <input className="enviar" type="submit" value="Iniciar sesión" />
-        </p>
+      <form onSubmit={handleSubmit} className="loginform">
+        <label className="loginlabel">
+          <input
+            type="text"
+            className="loginform-input"
+            required
+            name="email"
+          />{" "}
+          Email
+        </label>
+        <label className="loginlabel">
+          <input type="password" className="loginform-input" required />{" "}
+          Password
+        </label>
+        <label className="loginlabel">
+          <input type="submit" className="enviar" value="Login" />
+        </label>
       </form>
-
       <div className="registrarsetextcontainer">
         <Link to={"/register"} className="linktoregister">
           Registrarse

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { LivingSpaceStructure } from "../../../models/livingspace";
 import { RootState } from "../../../store/store";
 import { useLivingSpace } from "../../hooks.features/use.livingspace";
-// import { LivingSpaceStateStructure } from "../../reducers.features/livingspace.slice";
+import { LivingSpaceStateStructure } from "../../reducers.features/livingspace.slice";
 import { LivingSpaceRepo } from "../../repo.features/livingspace.repo/livingspace.repo";
 
 export function Gallery() {
@@ -19,12 +19,11 @@ export function Gallery() {
   return (
     <>
       <button onClick={handleSubmit}>Get Gallery</button>
-      <p>Hola soy la gallery</p>
 
       {/* <p>{galleryArray[0].m2}</p> */}
       <ul className="homepage__list">
         {galleryArray.map((item: Partial<LivingSpaceStructure>) => (
-          <p>{item.door?.hand}</p>
+          <p>{item.livingspace}</p>
           // <Card key={item.id} product={item}></Card>
         ))}
       </ul>

@@ -1,44 +1,29 @@
 html,
 body {
   font-family: "Handlee", cursive;
-  display: flex;
-  position: relative;
   min-height: 100vh;
-  justify-content: center;
-  background-color: #fbfdfe55;
   display: flex;
-  justify-content: first baseline;
+  justify-content: center;
   padding-top: 1em;
 }
 
-.form {
-  margin: 3;
+.loginform {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: #f8f2f280;
+  justify-content: flex-start;
+  background-color: #b8b6b60e;
   border-radius: 15px;
-  width: 30em;
+  height: 15em;
+  width: 35em;
   font-size: large;
-  font-family: "Handlee", cursive;
-  padding: 2em;
+  padding-top: 1em;
 }
-.enviar {
-  border-radius: 6px;
-  width: 100%;
-  border: none;
-  display: inline-block;
-  font-family: "Handlee", cursive;
-  font-size: medium;
+.loginlabel {
+  padding: 0.7em;
 }
-input {
-  padding: 1.5em;
-  border-radius: 1em;
-  border: 0;
-  width: 20em;
-  outline-color: rgb(233, 241, 241);
-}
-
 .linktoregister {
   text-decoration: none;
+}
+.loginform-input {
+  width: 25em;
 }

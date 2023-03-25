@@ -8,7 +8,7 @@ const initialState: LivingSpaceStateStructure = {
   galleryState: [
     {
       m2: 0,
-      livingspace: "inicial state",
+      livingspace: "",
       window: {
         m2: "",
         ref: "",

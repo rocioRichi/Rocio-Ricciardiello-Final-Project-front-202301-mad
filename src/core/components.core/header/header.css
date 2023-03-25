@@ -1,8 +1,7 @@
 .header {
   color: bisque;
   position: relative;
-  padding: 1rem;
-  min-height: 20vh;
+  min-height: 10vh;
 }
 .saludo {
   color: grey;
