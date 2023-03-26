@@ -25,7 +25,10 @@ export function Gallery() {
       {/* <p>{galleryArray[0].m2}</p> */}
       <ul className="homepage__list">
         {galleryArray.map((item: Partial<LivingSpaceStructure>) => (
-          <p>{item.livingspace}</p>
+          <Link to={"/livingspace/room"} className="linktoregister">
+            <p>{item.livingspace}</p>
+          </Link>
+
           // <Card key={item.id} product={item}></Card>
         ))}
       </ul>

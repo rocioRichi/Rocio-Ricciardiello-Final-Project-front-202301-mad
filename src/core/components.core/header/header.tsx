@@ -11,7 +11,7 @@ export function Header() {
     <>
       <header className="header">
         <Link to={"/login"} className="linktoregister">
-          <img src="../../../pageslogo.png" alt="logo" />
+          <img src="../../../pageslogo.svg" alt="logo" />
         </Link>
 
         <p className="saludo">{initials}</p>
