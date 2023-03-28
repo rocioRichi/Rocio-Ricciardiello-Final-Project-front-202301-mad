@@ -73,3 +73,6 @@
   display: flex;
   justify-content: center;
 }
+.room__image {
+  height: 50px;
+}

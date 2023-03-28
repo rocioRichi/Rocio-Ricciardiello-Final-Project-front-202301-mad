@@ -92,6 +92,6 @@ export class LivingSpaceRepo implements RepoLivingSpace<ServerResponse> {
 
     const data = await resp.json();
 
-    return data;
+    return data.results;
   }
 }

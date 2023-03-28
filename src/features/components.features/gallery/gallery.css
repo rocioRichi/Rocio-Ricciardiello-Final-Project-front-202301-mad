@@ -19,3 +19,6 @@ li {
 .gallery__ul {
   display: flex;
 }
+.galleryimage {
+  height: 50px;
+}

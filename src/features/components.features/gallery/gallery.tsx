@@ -25,7 +25,7 @@ export function Gallery() {
   }, []);
 
   const handlerRoom = (event: SyntheticEvent) => {
-    const idRoom = event.currentTarget.innerHTML;
+    const idRoom: any = event.currentTarget.ariaLabel;
     console.log(idRoom);
     room(idRoom);
     navigate("/livingspace/room");
@@ -39,11 +39,16 @@ export function Gallery() {
         {galleryArray.map((item: Partial<LivingSpaceStructure>) => (
           <>
             <section className="gallery__section">
-              <Link to={"/livingspace/room"} className="linktoregister">
-                <p>{item.livingspace}</p>
-              </Link>
+              <p>{item.livingspace}</p>
               <p>{item.m2}m2</p>
-              <button onClick={handlerRoom}>{item.id}</button>
+              <img
+                className="galleryimage"
+                src={item.image}
+                alt={item.livingspace}
+              />
+              <button aria-label={item.id} onClick={handlerRoom}>
+                Ver
+              </button>
             </section>
           </>
 

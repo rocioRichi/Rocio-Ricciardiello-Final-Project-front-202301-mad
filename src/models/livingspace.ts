@@ -7,6 +7,7 @@ export interface LivingSpaceStructure {
   wardrobe?: ProductDetail;
   walls?: ProductDetail;
   door?: DoorDetail;
+  image?: string;
 }
 export type ProductDetail = {
   m2?: string;
