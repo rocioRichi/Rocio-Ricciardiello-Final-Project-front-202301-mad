@@ -186,10 +186,9 @@ export function CreateLivingSpace() {
             Modelo de puerta
           </label>
         </fieldset>
-      </form>
-      <label>
         <input type="submit" className="enviar" value="Crear" />
-      </label>
+      </form>
+      <label></label>
     </>
   );
 }
