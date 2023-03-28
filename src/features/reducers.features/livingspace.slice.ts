@@ -34,7 +34,7 @@ const initialState: LivingSpaceStateStructure = {
       ref: "",
     },
     door: {
-      hand: "right | left",
+      hand: "right",
       ref: "",
     },
   },

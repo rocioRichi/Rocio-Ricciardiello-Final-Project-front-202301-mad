@@ -15,7 +15,7 @@ export function useLivingSpace(repo: LivingSpaceRepo) {
     newLivingSpace: Partial<LivingSpaceStructure>
   ) => {
     try {
-      await repo.create(newLivingSpace, "livingspace/newlivingspace");
+      await repo.create(newLivingSpace, "/create");
     } catch (error) {
       console.error((error as Error).message);
     }

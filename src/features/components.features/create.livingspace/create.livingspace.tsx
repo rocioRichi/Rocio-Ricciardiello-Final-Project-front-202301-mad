@@ -1,77 +1,195 @@
-export {};
-// import { SyntheticEvent, useMemo } from "react";
-// import { Link } from "react-router-dom";
-// import { LivingSpaceStructure } from "../../../models/livingspace";
+import { SyntheticEvent } from "react";
+import { LivingSpaceStructure } from "../../../models/livingspace";
+import { useLivingSpace } from "../../hooks.features/use.livingspace";
+import { LivingSpaceRepo } from "../../repo.features/livingspace.repo/livingspace.repo";
+import "./create.livingspace.css";
+export function CreateLivingSpace() {
+  const repo = new LivingSpaceRepo();
+  const { createLivingSpace } = useLivingSpace(repo);
+  const handleSubmit = (event: SyntheticEvent) => {
+    event.preventDefault();
+    const formData = event.currentTarget as HTMLFormElement;
+    const inputs = formData.querySelectorAll("input");
 
-// import { useLivingSpace } from "../../hooks.features/use.livingspace";
-// import { LivingSpaceRepo } from "../../repo.features/livingspace.repo/livingspace.repo";
-// import "./create.livingspace.css";
+    const createObject: Partial<LivingSpaceStructure> = {
+      livingspace: inputs[0].value,
+      m2: +inputs[1].value,
 
-// export default function CreateLivingSpace() {
-//   const repo = useMemo(() => new LivingSpaceRepo(), []);
-//   const { userLivingSpace } = useLivingSpace(repo);
+      window: {
+        m2: inputs[2].value,
+        ref: inputs[3].value,
+      },
 
-//   const handleSubmit = (event: SyntheticEvent) => {
-//     event.preventDefault();
-//     const formData = event.currentTarget as HTMLFormElement;
-//     const inputs = formData.querySelectorAll("input");
+      floor: {
+        m2: inputs[4].value,
+        ref: inputs[5].value,
+      },
 
-//     const newLivingSpace: Partial<LivingSpaceStructure> = {
-//       livingspace: inputs[0].value,
-//     };
+      walls: {
+        m2: inputs[6].value,
+        ref: inputs[7].value,
+      },
 
-//     userLivingSpace(newLivingSpace);
-//     formData.reset();
-//   };
+      wardrobe: {
+        m2: inputs[8].value,
+        ref: inputs[9].value,
+      },
 
-//   return (
-//     <>
-//       <form onSubmit={handleSubmit} className="createlivingspaceform">
-//         <label className="createlivingspace__label">
-//           <input
-//             type="text"
-//             className="createlivingspaceform__input"
-//             required
-//             name="estancia"
-//           />
-//           Nombre de la estancia
-//         </label>
-//         <label className="createlivingspace__label">
-//           <input
-//             type="password"
-//             className="createlivingspaceform__input"
-//             required
-//           />
-//           m2
-//         </label>
+      door: {
+        hand: inputs[10].value as "right" | "left",
+        ref: inputs[11].value,
+      },
+    };
+    createLivingSpace(createObject);
+  };
+  return (
+    /* m2---0 */
+    <>
+      <div className="dondestas">
+        <p>Crear estancia</p>
+      </div>
+      <form onSubmit={handleSubmit} className="createlivingspaceform">
+        {/* livingSpace---1 */}
+        <label className="createlivingspace__label">
+          <input
+            type="text"
+            className="createlivingspaceform__input"
+            required
+            name="livingSpace"
+          />
+          Nombre de la estancia
+        </label>
+        <label className="createlivingspace__label">
+          <input
+            type="text"
+            className="createlivingspaceform__input"
+            required
+            name="m2"
+          />
+          m2{" "}
+        </label>
+        {/* window m2---2 */}
+        <fieldset>
+          <legend>Ventana</legend>
 
-//         <label className="createlivingspace__label">
-//           <input className="enviar" type="submit" value="Crear" />
-//         </label>
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="m2Ventana"
+            />
+            m2
+          </label>
+          {/* window material---3 */}
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="materialventana"
+            />
+            Material
+          </label>
+        </fieldset>
+        {/* Floor m2 ---4 */}
+        <fieldset>
+          <legend>Suelo</legend>
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="floorm2"
+            />
+            m2
+          </label>
+          {/* Floor material ---5 */}
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="floormaterial"
+            />
+            Material
+          </label>
+        </fieldset>
+        {/* Walls---6 m2 */}
 
-//         <div className="createlivingspace__gallery__favcontainer">
-//           <img
-//             src="../../../fav_kitchen/kitchen1.png"
-//             height={40}
-//             alt="Bombilla con la palabra idea en su interior junto a un corazón"
-//           />
-//           <img
-//             src="../../../fav_kitchen/ktchen3.png"
-//             height={40}
-//             alt="Bombilla con la palabra idea en su interior junto a un corazón"
-//           />
-//           <img
-//             src="../../../fav_kitchen/kitchen4.png"
-//             height={40}
-//             alt="Bombilla con la palabra idea en su interior junto a un corazón"
-//           />
-//         </div>
-//       </form>
-//       <div>
-//         <Link to={"/register"} className="linktoregister">
-//           Modificar estancia
-//         </Link>
-//       </div>
-//     </>
-//   );
-// }
+        <fieldset>
+          <legend>Pintura</legend>
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="wallsm2"
+            />
+            m2
+          </label>
+          {/* Walls color---7 */}
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="wallscolor"
+            />
+            Color
+          </label>
+        </fieldset>
+        {/* Wardrobe m2 ---8 */}
+
+        <fieldset>
+          <legend>Armario</legend>
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="wardrobem2"
+            />
+            m. lineales
+          </label>
+          {/* Wardrobe material ---9 */}
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="wardrobematerial"
+            />
+            Modelo de puerta
+          </label>
+        </fieldset>
+        {/* Door hand ---10 */}
+        <fieldset>
+          <legend>Puerta</legend>
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="doorhand"
+            />
+            Mano
+          </label>
+          {/* Door modelo ---11 */}
+          <label className="createlivingspace__label">
+            <input
+              type="text"
+              className="createlivingspaceform__input"
+              required
+              name="doormodelo"
+            />
+            Modelo de puerta
+          </label>
+        </fieldset>
+      </form>
+      <label>
+        <input type="submit" className="enviar" value="Crear" />
+      </label>
+    </>
+  );
+}

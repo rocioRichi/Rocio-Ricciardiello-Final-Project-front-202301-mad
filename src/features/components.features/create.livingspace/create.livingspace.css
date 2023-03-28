@@ -18,7 +18,7 @@ body {
   justify-content: flex-start;
   background-color: #b8b6b60e;
   border-radius: 15px;
-  height: 16em;
+  height: 60em;
   width: 35em;
   font-size: large;
   padding-top: 1em;
@@ -66,4 +66,18 @@ body {
 
 #room__srcfile2::before {
   content: "Subir imagen";
+}
+.dondestas {
+  display: flex;
+  justify-content: flex-end;
+}
+fieldset {
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #d8d8dd;
+  padding-bottom: 0.7em;
+}
+
+legend {
+  color: black;
 }

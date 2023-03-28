@@ -13,7 +13,7 @@ export class LivingSpaceRepo implements RepoLivingSpace<ServerResponse> {
     newLivingSpace: Partial<LivingSpaceStructure>,
     urlExtraPath: string
   ): Promise<ServerResponse> {
-    const url = this.url + "/" + urlExtraPath;
+    const url = this.url + "/livingspace" + urlExtraPath;
     console.log(url);
     console.log(newLivingSpace);
 

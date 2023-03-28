@@ -9,10 +9,10 @@ export interface LivingSpaceStructure {
   door?: DoorDetail;
 }
 export type ProductDetail = {
-  m2: string;
+  m2?: string;
   ref: string;
 };
 export type DoorDetail = {
-  hand: "right | left";
+  hand: "right" | "left";
   ref: string;
 };
