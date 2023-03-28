@@ -1,6 +1,6 @@
 import { SyntheticEvent, useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LivingSpaceStructure } from "../../../models/livingspace";
 import { RootState } from "../../../store/store";
 import { useLivingSpace } from "../../hooks.features/use.livingspace";
@@ -13,15 +13,23 @@ import "./gallery.css";
 
 export function Gallery() {
   const repo = useMemo(() => new LivingSpaceRepo(), []);
-  const { gallery } = useLivingSpace(repo);
+  const { room, gallery } = useLivingSpace(repo);
+
+  const navigate = useNavigate();
 
   const galleryArray = useSelector(
     (state: RootState) => state.livingSpaceState.galleryState
   );
   useEffect(() => {
-    gallery();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    gallery(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const handlerRoom = (event: SyntheticEvent) => {
+    const idRoom = event.currentTarget.innerHTML;
+    console.log(idRoom);
+    room(idRoom);
+    navigate("/livingspace/room");
+  };
 
   return (
     <>
@@ -35,6 +43,7 @@ export function Gallery() {
                 <p>{item.livingspace}</p>
               </Link>
               <p>{item.m2}m2</p>
+              <button onClick={handlerRoom}>{item.id}</button>
             </section>
           </>
 

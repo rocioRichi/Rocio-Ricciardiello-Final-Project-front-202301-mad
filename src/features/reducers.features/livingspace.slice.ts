@@ -3,7 +3,7 @@ import { LivingSpaceStructure } from "../../models/livingspace";
 
 export type LivingSpaceStateStructure = {
   galleryState: LivingSpaceStructure[];
-  roomDetail: LivingSpaceStructure;
+  roomDetail: LivingSpaceStructure[];
 };
 const initialState: LivingSpaceStateStructure = {
   galleryState: [
@@ -13,31 +13,33 @@ const initialState: LivingSpaceStateStructure = {
       livingspace: "inicial space",
     },
   ],
-  roomDetail: {
-    id: "",
-    m2: 0,
-    livingspace: "",
-    window: {
-      m2: "",
-      ref: "",
+  roomDetail: [
+    {
+      id: "",
+      m2: 0,
+      livingspace: "",
+      window: {
+        m2: "",
+        ref: "",
+      },
+      floor: {
+        m2: "",
+        ref: "",
+      },
+      wardrobe: {
+        m2: "",
+        ref: "",
+      },
+      walls: {
+        m2: "",
+        ref: "",
+      },
+      door: {
+        hand: "right",
+        ref: "",
+      },
     },
-    floor: {
-      m2: "",
-      ref: "",
-    },
-    wardrobe: {
-      m2: "",
-      ref: "",
-    },
-    walls: {
-      m2: "",
-      ref: "",
-    },
-    door: {
-      hand: "right",
-      ref: "",
-    },
-  },
+  ],
 };
 
 export const livingSpaceSlice = createSlice({
@@ -50,8 +52,14 @@ export const livingSpaceSlice = createSlice({
     ) {
       state.galleryState = action.payload;
     },
+    loadRoom(
+      state: LivingSpaceStateStructure,
+      action: PayloadAction<LivingSpaceStructure[]>
+    ) {
+      state.roomDetail = action.payload;
+    },
   },
 });
 
-export const { loadGallery } = livingSpaceSlice.actions;
+export const { loadGallery, loadRoom } = livingSpaceSlice.actions;
 export const livingSpaceReducer = livingSpaceSlice.reducer;

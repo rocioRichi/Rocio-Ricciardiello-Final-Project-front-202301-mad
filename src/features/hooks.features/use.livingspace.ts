@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { LivingSpaceStructure } from "../../models/livingspace";
 import { AppDispatch, RootState } from "../../store/store";
-import { loadGallery } from "../reducers.features/livingspace.slice";
+import { loadGallery, loadRoom } from "../reducers.features/livingspace.slice";
 import { LivingSpaceRepo } from "../repo.features/livingspace.repo/livingspace.repo";
 
 export function useLivingSpace(repo: LivingSpaceRepo) {
@@ -29,10 +29,19 @@ export function useLivingSpace(repo: LivingSpaceRepo) {
       console.error((error as Error).message);
     }
   };
+  const room = async (id: string) => {
+    try {
+      const data = await repo.getById("livingspace", id);
+      dispatch(loadRoom(data));
+    } catch (error) {
+      console.error((error as Error).message);
+    }
+  };
 
   return {
     galleryState,
     gallery,
     createLivingSpace,
+    room,
   };
 }

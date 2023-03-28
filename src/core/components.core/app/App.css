@@ -28,6 +28,7 @@ body {
   display: inline-block;
   font-family: "Handlee", cursive;
   font-size: large;
+  transform: scale(0.98);
 }
 input {
   padding: 1.5em;

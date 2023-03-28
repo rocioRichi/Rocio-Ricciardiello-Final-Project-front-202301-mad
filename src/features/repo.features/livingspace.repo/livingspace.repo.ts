@@ -74,9 +74,7 @@ export class LivingSpaceRepo implements RepoLivingSpace<ServerResponse> {
   }
 
   async getById(
-    loginInfo: LivingSpaceStructure,
     urlExtraPath: string,
-    token: string,
     id: string
   ): Promise<LivingSpaceStructure[]> {
     const url = this.url + "/" + urlExtraPath + "/" + id;
@@ -84,8 +82,7 @@ export class LivingSpaceRepo implements RepoLivingSpace<ServerResponse> {
     console.log(id);
 
     const resp = await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(loginInfo),
+      method: "GET",
       headers: {
         "Content-type": "application/json",
       },
@@ -94,8 +91,6 @@ export class LivingSpaceRepo implements RepoLivingSpace<ServerResponse> {
       throw new Error(`Error http: ${resp.status} ${resp.statusText}`);
 
     const data = await resp.json();
-    console.log("token devuelto por el repo");
-    console.log(data);
 
     return data;
   }
