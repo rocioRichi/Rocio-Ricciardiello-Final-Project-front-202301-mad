@@ -5,7 +5,6 @@ import { CreateLivingSpace } from "../../../features/components.features/create.
 import { Gallery } from "../../../features/components.features/gallery/gallery";
 import Login from "../../../features/components.features/login/login";
 import Register from "../../../features/components.features/register.form/register.form";
-import { FormRoom } from "../../../features/components.features/room/formroom";
 import { Room } from "../../../features/components.features/room/roombueno";
 import { Table } from "../../../features/components.features/table/table";
 
