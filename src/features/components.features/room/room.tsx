@@ -1,4 +1,5 @@
 import "./room.css";
+
 export function Room() {
   return (
     <>
@@ -152,14 +153,17 @@ export function Room() {
       <div className="room__gallery__favcontainer">
         <img
           src="../../../fav_kitchen/kitchen1.png"
+          height={40}
           alt="Bombilla con la palabra idea en su interior junto a un corazón"
         />
         <img
           src="../../../fav_kitchen/ktchen3.png"
+          height={40}
           alt="Bombilla con la palabra idea en su interior junto a un corazón"
         />
         <img
           src="../../../fav_kitchen/kitchen4.png"
+          height={40}
           alt="Bombilla con la palabra idea en su interior junto a un corazón"
         />
       </div>

@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html,
 body {
   font-family: "Handlee", cursive;
@@ -13,7 +18,7 @@ body {
   justify-content: flex-start;
   background-color: #b8b6b60e;
   border-radius: 15px;
-  height: 15em;
+  height: 16em;
   width: 35em;
   font-size: large;
   padding-top: 1em;
@@ -23,6 +28,10 @@ body {
 }
 .linktoregister {
   text-decoration: none;
+}
+
+a:visited {
+  color: black;
 }
 .loginform-input {
   width: 25em;

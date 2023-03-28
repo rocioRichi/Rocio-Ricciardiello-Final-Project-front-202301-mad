@@ -3,34 +3,41 @@ import { LivingSpaceStructure } from "../../models/livingspace";
 
 export type LivingSpaceStateStructure = {
   galleryState: LivingSpaceStructure[];
+  roomDetail: LivingSpaceStructure;
 };
 const initialState: LivingSpaceStateStructure = {
   galleryState: [
     {
-      m2: 0,
-      livingspace: "",
-      window: {
-        m2: "",
-        ref: "",
-      },
-      floor: {
-        m2: "",
-        ref: "",
-      },
-      wardrobe: {
-        m2: "",
-        ref: "",
-      },
-      walls: {
-        m2: "",
-        ref: "",
-      },
-      door: {
-        hand: "right | left",
-        ref: "",
-      },
+      id: "",
+      m2: 1,
+      livingspace: "inicial space",
     },
   ],
+  roomDetail: {
+    id: "",
+    m2: 0,
+    livingspace: "",
+    window: {
+      m2: "",
+      ref: "",
+    },
+    floor: {
+      m2: "",
+      ref: "",
+    },
+    wardrobe: {
+      m2: "",
+      ref: "",
+    },
+    walls: {
+      m2: "",
+      ref: "",
+    },
+    door: {
+      hand: "right | left",
+      ref: "",
+    },
+  },
 };
 
 export const livingSpaceSlice = createSlice({

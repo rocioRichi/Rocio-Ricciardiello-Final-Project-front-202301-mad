@@ -1,4 +1,5 @@
 export interface LivingSpaceStructure {
+  id: string;
   livingspace: string;
   m2: number;
   window?: ProductDetail;

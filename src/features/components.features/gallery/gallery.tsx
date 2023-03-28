@@ -1,33 +1,42 @@
-import { SyntheticEvent, useMemo } from "react";
+import { SyntheticEvent, useEffect, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { LivingSpaceStructure } from "../../../models/livingspace";
 import { RootState } from "../../../store/store";
 import { useLivingSpace } from "../../hooks.features/use.livingspace";
-import { LivingSpaceStateStructure } from "../../reducers.features/livingspace.slice";
+import {
+  LivingSpaceStateStructure,
+  loadGallery,
+} from "../../reducers.features/livingspace.slice";
 import { LivingSpaceRepo } from "../../repo.features/livingspace.repo/livingspace.repo";
+import "./gallery.css";
 
 export function Gallery() {
   const repo = useMemo(() => new LivingSpaceRepo(), []);
   const { gallery } = useLivingSpace(repo);
 
-  const handleSubmit = (event: SyntheticEvent) => {
-    gallery();
-  };
   const galleryArray = useSelector(
     (state: RootState) => state.livingSpaceState.galleryState
   );
+  useEffect(() => {
+    gallery();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
-      <button onClick={handleSubmit}>Get Gallery</button>
-
       {/* <p>{galleryArray[0].m2}</p> */}
-      <ul className="homepage__list">
+
+      <ul className="gallery__ul">
         {galleryArray.map((item: Partial<LivingSpaceStructure>) => (
-          <Link to={"/livingspace/room"} className="linktoregister">
-            <p>{item.livingspace}</p>
-          </Link>
+          <>
+            <section className="gallery__section">
+              <Link to={"/livingspace/room"} className="linktoregister">
+                <p>{item.livingspace}</p>
+              </Link>
+              <p>{item.m2}m2</p>
+            </section>
+          </>
 
           // <Card key={item.id} product={item}></Card>
         ))}

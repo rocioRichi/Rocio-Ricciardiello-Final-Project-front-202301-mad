@@ -11,7 +11,7 @@ export function useLivingSpace(repo: LivingSpaceRepo) {
 
   const dispatch = useDispatch<AppDispatch>();
 
-  const userLivingSpace = async (
+  const createLivingSpace = async (
     newLivingSpace: Partial<LivingSpaceStructure>
   ) => {
     try {
@@ -33,6 +33,6 @@ export function useLivingSpace(repo: LivingSpaceRepo) {
   return {
     galleryState,
     gallery,
-    userLivingSpace,
+    createLivingSpace,
   };
 }

@@ -1,75 +1,77 @@
-import { SyntheticEvent, useMemo } from "react";
-import { LivingSpaceStructure } from "../../../models/livingspace";
-import { RegisterStructure } from "../../../models/users";
-import { useLivingSpace } from "../../hooks.features/use.livingspace";
-import { LivingSpaceRepo } from "../../repo.features/livingspace.repo/livingspace.repo";
-import "./create.livingspace.css";
+export {};
+// import { SyntheticEvent, useMemo } from "react";
+// import { Link } from "react-router-dom";
+// import { LivingSpaceStructure } from "../../../models/livingspace";
 
-export default function CreateLivingSpace() {
-  const repo = useMemo(() => new LivingSpaceRepo(), []);
-  const { userLivingSpace } = useLivingSpace(repo);
+// import { useLivingSpace } from "../../hooks.features/use.livingspace";
+// import { LivingSpaceRepo } from "../../repo.features/livingspace.repo/livingspace.repo";
+// import "./create.livingspace.css";
 
-  const handleSubmit = (event: SyntheticEvent) => {
-    event.preventDefault();
-    const formData = event.currentTarget as HTMLFormElement;
-    const inputs = formData.querySelectorAll("input");
+// export default function CreateLivingSpace() {
+//   const repo = useMemo(() => new LivingSpaceRepo(), []);
+//   const { userLivingSpace } = useLivingSpace(repo);
 
-    const newLivingSpace: Partial<LivingSpaceStructure> = {
-      livingspace: inputs[0].value,
-    };
+//   const handleSubmit = (event: SyntheticEvent) => {
+//     event.preventDefault();
+//     const formData = event.currentTarget as HTMLFormElement;
+//     const inputs = formData.querySelectorAll("input");
 
-    userLivingSpace(newLivingSpace);
-    formData.reset();
-  };
+//     const newLivingSpace: Partial<LivingSpaceStructure> = {
+//       livingspace: inputs[0].value,
+//     };
 
-  return (
-    <>
-      <form onSubmit={handleSubmit} className="registerform">
-        <label className="registerlabel">
-          <input
-            type="text"
-            className="registerform-input"
-            required
-            name="email"
-          />{" "}
-          Email
-        </label>
-        <label className="registerlabel">
-          <input type="password" className="registerform-input" required />{" "}
-          Password
-        </label>
-        <label className="registerlabel">
-          <input
-            type="text"
-            className="registerform-input"
-            required
-            name="email"
-          />{" "}
-          Nombre
-        </label>
+//     userLivingSpace(newLivingSpace);
+//     formData.reset();
+//   };
 
-        <label className="registerlabel">
-          <input
-            type="text"
-            className="registerform-input"
-            required
-            name="email"
-          />{" "}
-          Apellido
-        </label>
-        <label className="registerlabel">
-          <input
-            type="text"
-            className="registerform-input"
-            required
-            name="email"
-          />{" "}
-          Teléfono
-        </label>
-        <label className="registerlabel">
-          <input className="enviar" type="submit" value="Register" />
-        </label>
-      </form>
-    </>
-  );
-}
+//   return (
+//     <>
+//       <form onSubmit={handleSubmit} className="createlivingspaceform">
+//         <label className="createlivingspace__label">
+//           <input
+//             type="text"
+//             className="createlivingspaceform__input"
+//             required
+//             name="estancia"
+//           />
+//           Nombre de la estancia
+//         </label>
+//         <label className="createlivingspace__label">
+//           <input
+//             type="password"
+//             className="createlivingspaceform__input"
+//             required
+//           />
+//           m2
+//         </label>
+
+//         <label className="createlivingspace__label">
+//           <input className="enviar" type="submit" value="Crear" />
+//         </label>
+
+//         <div className="createlivingspace__gallery__favcontainer">
+//           <img
+//             src="../../../fav_kitchen/kitchen1.png"
+//             height={40}
+//             alt="Bombilla con la palabra idea en su interior junto a un corazón"
+//           />
+//           <img
+//             src="../../../fav_kitchen/ktchen3.png"
+//             height={40}
+//             alt="Bombilla con la palabra idea en su interior junto a un corazón"
+//           />
+//           <img
+//             src="../../../fav_kitchen/kitchen4.png"
+//             height={40}
+//             alt="Bombilla con la palabra idea en su interior junto a un corazón"
+//           />
+//         </div>
+//       </form>
+//       <div>
+//         <Link to={"/register"} className="linktoregister">
+//           Modificar estancia
+//         </Link>
+//       </div>
+//     </>
+//   );
+// }
