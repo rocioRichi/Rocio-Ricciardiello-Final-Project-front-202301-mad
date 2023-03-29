@@ -1,4 +1,5 @@
 import { SyntheticEvent, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import { RegisterStructure } from "../../../models/users";
 import { useUsers } from "../../hooks.features/use.users";
 import { UsersRepo } from "../../repo.features/users.repo/users.repo";
@@ -7,6 +8,11 @@ import "./register.form.css";
 export default function Register() {
   const repo = useMemo(() => new UsersRepo(), []);
   const { userRegister } = useUsers(repo);
+  const navigate = useNavigate();
+
+  const handlercreate = (event: SyntheticEvent) => {
+    navigate("/login");
+  };
 
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -28,6 +34,11 @@ export default function Register() {
 
   return (
     <>
+      <div className="dondestas">
+        <button className="gallery__createbutton" onClick={handlercreate}>
+          Login
+        </button>
+      </div>
       <form onSubmit={handleSubmit} className="registerform">
         <label className="registerlabel">
           <input
