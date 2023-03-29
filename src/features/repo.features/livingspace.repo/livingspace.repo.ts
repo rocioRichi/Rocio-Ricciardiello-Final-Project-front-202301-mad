@@ -94,12 +94,16 @@ export class LivingSpaceRepo implements RepoLivingSpace<ServerResponse> {
 
     return data.results;
   }
-  async delete(token: string, id: string): Promise<void> {
-    const url = this.url + "/livingspace/" + id;
-
+  async delete(id: string, token: string): Promise<void> {
+    const url = this.url + "/livingspace/delete";
+    console.log(url);
     const resp = await fetch(url, {
       method: "DELETE",
+      body: JSON.stringify({
+        id: id,
+      }),
       headers: {
+        "Content-type": "application/json",
         Authorization: "Bearer " + token,
       },
     });

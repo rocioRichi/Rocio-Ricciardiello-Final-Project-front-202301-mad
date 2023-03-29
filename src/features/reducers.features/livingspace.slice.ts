@@ -12,7 +12,7 @@ const initialState: LivingSpaceStateStructure = {
       m2: 1,
       livingspace: "inicial space",
       image:
-        "https://media.admagazine.com/photos/61dde7c6089751617cd2fc5e/master/pass/Tendencias-ba%C3%B1o-2022.jpg",
+        "https://firebasestorage.googleapis.com/v0/b/coders2023-finalproject.appspot.com/o/aseo.jpg?alt=media&token=c09dcf49-22b1-4586-8cc5-c2d7961e57a7",
     },
   ],
   roomDetail: [

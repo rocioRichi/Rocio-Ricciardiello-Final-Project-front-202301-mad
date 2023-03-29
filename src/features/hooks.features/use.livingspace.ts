@@ -8,7 +8,7 @@ export function useLivingSpace(repo: LivingSpaceRepo) {
   const galleryState = useSelector(
     (state: RootState) => state.livingSpaceState
   );
-
+  const tokenData = useSelector((state: RootState) => state.users.token);
   const dispatch = useDispatch<AppDispatch>();
 
   const createLivingSpace = async (
@@ -37,11 +37,19 @@ export function useLivingSpace(repo: LivingSpaceRepo) {
       console.error((error as Error).message);
     }
   };
+  const deleteLivingSpace = async (id: string) => {
+    try {
+      await repo.delete(id, tokenData);
+    } catch (error) {
+      console.log((error as Error).message);
+    }
+  };
 
   return {
     galleryState,
     gallery,
     createLivingSpace,
     room,
+    deleteLivingSpace,
   };
 }

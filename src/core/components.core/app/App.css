@@ -1,14 +1,7 @@
-html,
-body {
-  font-family: "Handlee", cursive;
+.App {
+  max-width: 70vw;
   display: flex;
-  position: relative;
-  min-height: 100vh;
-  justify-content: center;
-  background-color: #fbfdfe55;
-  display: flex;
-  justify-content: first baseline;
-  padding-top: 1em;
+  flex-direction: column;
 }
 
 .form {

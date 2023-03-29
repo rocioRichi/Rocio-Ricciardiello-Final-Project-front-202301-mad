@@ -1,14 +1,25 @@
-import { useEffect, useMemo } from "react";
+import { SyntheticEvent, useMemo } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { RootState } from "../../../store/store";
 import { useLivingSpace } from "../../hooks.features/use.livingspace";
 import { LivingSpaceRepo } from "../../repo.features/livingspace.repo/livingspace.repo";
 import "./room.css";
 
 export function Room() {
+  const repo = useMemo(() => new LivingSpaceRepo(), []);
+  const { deleteLivingSpace } = useLivingSpace(repo);
+  const navigate = useNavigate();
+
   const roomDetailArray = useSelector(
     (state: RootState) => state.livingSpaceState.roomDetail
   );
+  const handleDelete = (event: SyntheticEvent) => {
+    const idDelete = roomDetailArray[0].id;
+    deleteLivingSpace(idDelete);
+    navigate("/livingspace/gallery");
+  };
+
   // const repo = useMemo(() => new LivingSpaceRepo(), []);
 
   // const { room } = useLivingSpace(repo);
@@ -173,6 +184,8 @@ export function Room() {
           <p>{">"}</p>
         </div>
       </div>
+      <img src="../../../../papelera.png" onClick={handleDelete} alt="" />
+      <p>Eliminar estancia</p>
       {/* lightbulb */}
       <div className="room__lightbulbdrawing">
         <img
