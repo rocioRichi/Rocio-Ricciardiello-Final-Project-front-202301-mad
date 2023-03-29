@@ -10,11 +10,14 @@ export function Room() {
   const repo = useMemo(() => new LivingSpaceRepo(), []);
   const { deleteLivingSpace } = useLivingSpace(repo);
   const navigate = useNavigate();
+  const handlercreate = (event: SyntheticEvent) => {
+    navigate("/livingspace/gallery");
+  };
 
   const roomDetailArray = useSelector(
     (state: RootState) => state.livingSpaceState.roomDetail
   );
-  const handleDelete = (event: SyntheticEvent) => {
+  const handlelink = (event: SyntheticEvent) => {
     const idDelete = roomDetailArray[0].id;
     deleteLivingSpace(idDelete);
     navigate("/livingspace/gallery");
@@ -30,6 +33,11 @@ export function Room() {
   return (
     <>
       {/* kitchen plan */}
+      <div className="dondestas">
+        <button className="gallery__createbutton" onClick={handlercreate}>
+          Ver todas las estancias
+        </button>
+      </div>
       <div className="room__drawingcontainer">
         <img
           className="room__image"
@@ -184,7 +192,7 @@ export function Room() {
           <p>{">"}</p>
         </div>
       </div>
-      <img src="../../../../papelera.png" onClick={handleDelete} alt="" />
+      <img src="../../../../papelera.png" onClick={handlelink} alt="" />
       <p>Eliminar estancia</p>
       {/* lightbulb */}
       <div className="room__lightbulbdrawing">

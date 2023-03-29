@@ -8,6 +8,10 @@ export function CreateLivingSpace() {
   const repo = new LivingSpaceRepo();
   const { createLivingSpace } = useLivingSpace(repo);
   const navigate = useNavigate();
+  const handlercreate = (event: SyntheticEvent) => {
+    navigate("/livingspace/gallery");
+  };
+
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
     const formData = event.currentTarget as HTMLFormElement;
@@ -49,7 +53,9 @@ export function CreateLivingSpace() {
     /* m2---0 */
     <>
       <div className="dondestas">
-        <p>Crear estancia</p>
+        <button className="gallery__createbutton" onClick={handlercreate}>
+          Ver todas las estancias
+        </button>
       </div>
       <form onSubmit={handleSubmit} className="createlivingspaceform">
         {/* livingSpace---1 */}
