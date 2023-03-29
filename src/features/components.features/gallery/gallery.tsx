@@ -38,22 +38,17 @@ export function Gallery() {
       <ul className="gallery__ul">
         {galleryArray.map((item: Partial<LivingSpaceStructure>) => (
           <>
-            <section className="gallery__section" key={item.id}>
+            <section className="gallery__section">
+              <p>{item.livingspace}</p>
+              <p>{item.m2}m2</p>
               <img
                 className="galleryimage"
                 src={item.image}
                 alt={item.livingspace}
               />
-              <p>{item.livingspace}</p>
-
-              <p>{item.m2}m2</p>
-              <img
-                src="../../../planos/seleccion/aseo.png"
-                aria-label={item.id}
-                onClick={handlerRoom}
-                alt=""
-              />
-              <img src="../../../more.png" alt="" />
+              <button aria-label={item.id} onClick={handlerRoom}>
+                Ver
+              </button>
             </section>
           </>
 
