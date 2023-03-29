@@ -203,7 +203,7 @@ export function CreateLivingSpace() {
             required
             name="m2"
           />
-          Cargar archivo
+          Introducir Url
         </label>
         <input type="submit" className="enviar" value="Crear" />
       </form>
