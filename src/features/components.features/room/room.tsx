@@ -64,11 +64,8 @@ export function Room() {
               </td>
             </tr>
             <tr>
-              <td className="roomtable__td__property">
-                {" "}
-                {roomDetailArray[0].m2}
-              </td>
-              <td className="table__td__data"> 14</td>
+              <td className="roomtable__td__property">m2</td>
+              <td className="table__td__data"> {roomDetailArray[0].m2}</td>
             </tr>
           </table>
 
@@ -107,7 +104,6 @@ export function Room() {
             <tr>
               <td className="roomtable__td__property"> m. lineales:</td>
               <td className="table__td__data">
-                {" "}
                 {roomDetailArray[0].wardrobe?.m2}
               </td>
             </tr>
