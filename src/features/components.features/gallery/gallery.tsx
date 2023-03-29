@@ -30,11 +30,18 @@ export function Gallery() {
     room(idRoom);
     navigate("/livingspace/room");
   };
+  const handlercreate = (event: SyntheticEvent) => {
+    navigate("/livingspace/create");
+  };
 
   return (
     <>
       {/* <p>{galleryArray[0].m2}</p> */}
-
+      <div className="dondestas">
+        <button className="gallery__createbutton" onClick={handlercreate}>
+          Crear estancia
+        </button>
+      </div>
       <ul className="gallery__ul">
         {galleryArray.map((item: Partial<LivingSpaceStructure>) => (
           <>
@@ -46,9 +53,10 @@ export function Gallery() {
                 src={item.image}
                 alt={item.livingspace}
               />
-              <button aria-label={item.id} onClick={handlerRoom}>
+
+              <p aria-label={item.id} onClick={handlerRoom}>
                 Ver
-              </button>
+              </p>
             </section>
           </>
 

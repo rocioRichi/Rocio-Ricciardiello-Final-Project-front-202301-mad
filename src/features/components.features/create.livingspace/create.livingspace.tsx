@@ -1,4 +1,5 @@
 import { SyntheticEvent } from "react";
+import { useNavigate } from "react-router-dom";
 import { LivingSpaceStructure } from "../../../models/livingspace";
 import { useLivingSpace } from "../../hooks.features/use.livingspace";
 import { LivingSpaceRepo } from "../../repo.features/livingspace.repo/livingspace.repo";
@@ -6,6 +7,7 @@ import "./create.livingspace.css";
 export function CreateLivingSpace() {
   const repo = new LivingSpaceRepo();
   const { createLivingSpace } = useLivingSpace(repo);
+  const navigate = useNavigate();
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
     const formData = event.currentTarget as HTMLFormElement;
@@ -41,6 +43,7 @@ export function CreateLivingSpace() {
       },
     };
     createLivingSpace(createObject);
+    navigate("/livingSpace/gallery");
   };
   return (
     /* m2---0 */
