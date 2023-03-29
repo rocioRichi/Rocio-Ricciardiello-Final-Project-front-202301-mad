@@ -45,6 +45,7 @@ export function CreateLivingSpace() {
         hand: inputs[10].value as "right" | "left",
         ref: inputs[11].value,
       },
+      image: inputs[12].value,
     };
     createLivingSpace(createObject);
     navigate("/livingSpace/gallery");
@@ -75,7 +76,7 @@ export function CreateLivingSpace() {
             required
             name="m2"
           />
-          m2{" "}
+          m2
         </label>
         {/* window m2---2 */}
         <fieldset>
@@ -195,6 +196,15 @@ export function CreateLivingSpace() {
             Modelo de puerta
           </label>
         </fieldset>
+        <label className="createlivingspace__label">
+          <input
+            type="text"
+            className="createlivingspaceform__input"
+            required
+            name="m2"
+          />
+          Cargar archivo
+        </label>
         <input type="submit" className="enviar" value="Crear" />
       </form>
       <label></label>
