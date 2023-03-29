@@ -1,0 +1,7 @@
+.header {
+  min-height: 10vh;
+  margin-block-start: 1em;
+}
+.saludo {
+  color: grey;
+}
