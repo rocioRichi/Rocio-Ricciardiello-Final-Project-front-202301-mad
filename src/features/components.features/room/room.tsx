@@ -20,12 +20,20 @@ export function Room() {
     navigate("/livingspace/gallery");
   };
 
+  // const repo = useMemo(() => new LivingSpaceRepo(), []);
+
+  // const { room } = useLivingSpace(repo);
+
+  // useEffect(() => {
+  //   room(roomDetailArray[0].id); // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
   return (
     <>
       {/* kitchen plan */}
       <div className="room__drawingcontainer">
         <img
-          src="../../../planos/kitchenview.jpg"
+          className="room__image"
+          src={roomDetailArray[0].image}
           alt="Plano dibujo de una cocina"
         />
       </div>
@@ -44,11 +52,14 @@ export function Room() {
           <table border={0}>
             <tr className="roomtable__tr">
               <td className="roomtable__td__roomelement" colSpan={2}>
-                Cocina
+                {roomDetailArray[0].livingspace}
               </td>
             </tr>
             <tr>
-              <td className="roomtable__td__property"> m2:</td>
+              <td className="roomtable__td__property">
+                {" "}
+                {roomDetailArray[0].m2}
+              </td>
               <td className="table__td__data"> 14</td>
             </tr>
           </table>
@@ -63,11 +74,17 @@ export function Room() {
             </tr>
             <tr>
               <td className="roomtable__td__property"> m2:</td>
-              <td className="table__td__data"> 16</td>
+              <td className="table__td__data">
+                {" "}
+                {roomDetailArray[0].floor?.m2}
+              </td>
             </tr>
             <tr className="roomtd">
               <td className="roomtable__td__property">Material:</td>
-              <td className="table__td__data">Porcelánico</td>
+              <td className="table__td__data">
+                {" "}
+                {roomDetailArray[0].floor?.ref}
+              </td>
             </tr>
           </table>
 
@@ -81,11 +98,16 @@ export function Room() {
             </tr>
             <tr>
               <td className="roomtable__td__property"> m. lineales:</td>
-              <td className="table__td__data"> 2</td>
+              <td className="table__td__data">
+                {" "}
+                {roomDetailArray[0].wardrobe?.m2}
+              </td>
             </tr>
             <tr className="roomtd">
               <td className="roomtable__td__propertyy">Modelo de puerta:</td>
-              <td className="table__td__data">4V</td>
+              <td className="table__td__data">
+                {roomDetailArray[0].wardrobe?.m2}
+              </td>
             </tr>
           </table>
 
@@ -99,11 +121,16 @@ export function Room() {
             </tr>
             <tr>
               <td className="roomtable__td__property"> m2:</td>
-              <td className="table__td__data">38</td>
+              <td className="table__td__data">
+                {roomDetailArray[0].walls?.m2}
+              </td>
             </tr>
             <tr className="roomtd">
               <td className="roomtable__td__property">Color:</td>
-              <td className="table__td__data">Ral 1001</td>
+              <td className="table__td__data">
+                {" "}
+                {roomDetailArray[0].walls?.ref}
+              </td>
             </tr>
           </table>
 
@@ -117,11 +144,16 @@ export function Room() {
             </tr>
             <tr>
               <td className="roomtable__td__property"> Mano</td>
-              <td className="table__td__data">Derecha</td>
+              <td className="table__td__data">
+                {" "}
+                {roomDetailArray[0].door?.hand}
+              </td>
             </tr>
             <tr className="roomtd">
               <td className="roomtable__td__property">Modelo:</td>
-              <td className="table__td__data">4V</td>
+              <td className="table__td__data">
+                {roomDetailArray[0].door?.ref}
+              </td>
             </tr>
           </table>
           {/* window */}
@@ -133,11 +165,15 @@ export function Room() {
             </tr>
             <tr>
               <td className="roomtable__td__property"> m2</td>
-              <td className="table__td__data">1,8</td>
+              <td className="table__td__data">
+                {roomDetailArray[0].window?.m2}
+              </td>
             </tr>
             <tr className="roomtd">
               <td className="roomtable__td__property">Material:</td>
-              <td className="table__td__data">Pvc</td>
+              <td className="table__td__data">
+                {roomDetailArray[0].window?.ref}
+              </td>
             </tr>
           </table>
         </div>
@@ -148,6 +184,8 @@ export function Room() {
           <p>{">"}</p>
         </div>
       </div>
+      <img src="../../../../papelera.png" onClick={handleDelete} alt="" />
+      <p>Eliminar estancia</p>
       {/* lightbulb */}
       <div className="room__lightbulbdrawing">
         <img
@@ -155,9 +193,6 @@ export function Room() {
           alt="Bombilla con la palabra idea en su interior junto a un corazón"
         />
       </div>
-      <img src="../../../../papelera.png" onClick={handleDelete} alt="" />
-      <p>Eliminar estancia</p>
-      {/* lightbulb */}
 
       {/* load picture button   */}
 
