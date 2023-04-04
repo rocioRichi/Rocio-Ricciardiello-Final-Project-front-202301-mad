@@ -1,0 +1,69 @@
+.createlivingspaceform {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #b8b6b60e;
+  border-radius: 15px;
+  height: 60em;
+  width: 35em;
+  font-size: large;
+  padding-top: 1em;
+}
+.createlivingspace__label {
+  padding: 0.7em;
+}
+.linktoregister {
+  text-decoration: none;
+}
+.createlivingspaceform__input {
+  width: 25em;
+}
+.room__fileselect {
+  position: relative;
+  display: inline-block;
+  margin: 2em;
+}
+
+.room__fileselect::before {
+  background-color: #b8b6b63d;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  content: "Seleccionar"; /* texto por defecto */
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.room__fileselect input[type="file"] {
+  opacity: 0;
+  width: 200px;
+  height: 32px;
+  display: inline-block;
+}
+
+#room__srcfile1::before {
+  content: "Guardar imagen";
+}
+
+#room__srcfile2::before {
+  content: "Subir imagen";
+}
+.dondestas {
+  display: flex;
+  justify-content: flex-end;
+}
+fieldset {
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: #d8d8dd;
+  padding-bottom: 0.7em;
+}
+
+legend {
+  color: black;
+}

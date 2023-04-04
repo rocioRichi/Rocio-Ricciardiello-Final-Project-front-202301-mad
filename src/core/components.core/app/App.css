@@ -1,0 +1,39 @@
+.App {
+  max-width: 70vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f2f280;
+  border-radius: 15px;
+  height: 20em;
+  width: 30em;
+  font-size: large;
+  font-family: "Handlee", cursive;
+}
+.enviar {
+  border-radius: 6px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  font-family: "Handlee", cursive;
+  font-size: large;
+  transform: scale(0.98);
+}
+input {
+  padding: 1.5em;
+  border-radius: 1em;
+  border: 0;
+
+  outline-color: rgb(233, 241, 241);
+}
+
+.registrarsetextcontainer {
+  display: flex;
+  font-family: "Handlee", cursive;
+  justify-content: flex-end;
+  padding-top: 1em;
+}

@@ -1,0 +1,32 @@
+.gallery__sectioncontainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #b8b6b60e;
+  border-radius: 15px;
+  height: 16em;
+  width: 35em;
+}
+.gallery__section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border-radius: 15px;
+  font-size: x-large;
+  margin: 2px;
+}
+li {
+  list-style: none;
+}
+.gallery__ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.galleryimage {
+  height: 20vh;
+}
+.gallery__createbutton {
+  all: unset;
+}

@@ -1,0 +1,20 @@
+.registerform {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #b8b6b60e;
+  border-radius: 15px;
+  height: 30em;
+  width: 35em;
+  font-size: large;
+  padding-top: 1em;
+}
+.registerlabel {
+  padding: 0.7em;
+}
+.linktoregister {
+  text-decoration: none;
+}
+.registerform-input {
+  width: 25em;
+}
